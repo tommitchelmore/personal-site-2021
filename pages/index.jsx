@@ -40,7 +40,7 @@ export default function Home({previousWorks}) {
 }
 
 export async function getStaticProps() {
-  const gql = new GraphQLClient(process.env.GQL_ENDPOINT)
+  const gql = new GraphQLClient('https://api-eu-central-1.graphcms.com/v2/ckl2auy3am8d201xsgh770i0h/master')
 
   const { previousWorks } = await gql.request(
       `{
