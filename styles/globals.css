@@ -26,5 +26,17 @@ body {
   @apply mr-4 text-2xl
 }
 
+.work-item {
+  overflow-x:visible;
+}
+
+.work-item > div:first-child > * {
+  transition: all 0.3s;
+}
+
+.work-item:hover > div:first-child > * {
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
 
 @tailwind utilities;
