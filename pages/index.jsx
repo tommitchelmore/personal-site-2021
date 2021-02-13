@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { GraphQLClient } from 'graphql-request'
 import Header from '../components/Header'
 import PreviousWorks from '../components/PreviousWork'
 import Contact from '../components/Contact'
+import gql from '../util/GraphQL'
 
 export default function Home({previousWorks}) {
   return (
@@ -19,13 +19,13 @@ export default function Home({previousWorks}) {
         <meta name="theme-color" content="#08081d" />
 
         <meta property="og:title" content="Thomas Mitchelmore - Student & Developer" />
-        <meta property="og:url" content="https://tommitchelmore.com" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL} />
         <meta property="og:description" content="Hi! 👋 I’m a passionate full stack developer from the UK, currently completing my Bachelors degree in Computer Science at the University of Southampton." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://i.imgur.com/Q0y2DNl.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://tommitchelmore.com" />
+        <meta property="twitter:url" content={process.env.NEXT_PUBLIC_BASE_URL} />
         <meta property="twitter:title" content="Thomas Mitchelmore - Student & Developer" />
         <meta property="twitter:description" content="Hi! 👋 I’m a passionate full stack developer from the UK, currently completing my Bachelors degree in Computer Science at the University of Southampton." />
         <meta property="twitter:image" content="https://i.imgur.com/Q0y2DNl.png" />
@@ -40,7 +40,6 @@ export default function Home({previousWorks}) {
 }
 
 export async function getStaticProps() {
-  const gql = new GraphQLClient('https://api-eu-central-1.graphcms.com/v2/ckl2auy3am8d201xsgh770i0h/master')
 
   const { previousWorks } = await gql.request(
       `{

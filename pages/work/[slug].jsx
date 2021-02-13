@@ -2,8 +2,8 @@ import {GraphQLClient} from 'graphql-request'
 import Container from '../../components/Container'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
+import gql from '../../util/GraphQL'
 
-const client = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/ckl2auy3am8d201xsgh770i0h/master")
 
 export default function WorkPage({previousWork}) {
     const router = useRouter()
@@ -25,13 +25,13 @@ export default function WorkPage({previousWork}) {
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={previousWork.title} />
                 <meta property="og:site_name" content="Thomas Mitchelmore - Student & Developer" />
-                <meta property="og:url" content={"https://tommitchelmore.com" + router.asPath} />
+                <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL + router.asPath} />
                 <meta property="og:image" content={previousWork.thumbnail.url} />
                 <meta property="article:published_time" content={previousWork.publishedAt} />
-                <meta property="article:author" content="https://tommitchelmore.com/profile" />
+                <meta property="article:author" content={process.env.base_url + "/profile"} />
 
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content={"https://tommitchelmore.com" + router.asPath} />
+                <meta property="twitter:url" content={process.env.NEXT_PUBLIC_BASE_URL + router.asPath} />
                 <meta property="twitter:title" content={previousWork.title} />
                 <meta property="twitter:description" content={previousWork.exerpt} />
                 <meta property="twitter:image" content={previousWork.thumbnail.url} />
@@ -63,7 +63,7 @@ export default function WorkPage({previousWork}) {
 }
 
 export async function getStaticProps({ params }) {
-    const { previousWork } = await client.request(
+    const { previousWork } = await gql.request(
         `
             query getPreviousWork($slug: String!) {
                 previousWork(where: {slug: $slug}) {
@@ -95,7 +95,7 @@ export async function getStaticProps({ params }) {
   }
   
   export async function getStaticPaths() {
-    const { previousWorks } = await client.request(
+    const { previousWorks } = await gql.request(
         `{
             previousWorks {
                 title

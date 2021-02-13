@@ -11,7 +11,7 @@ export default function WorkPage() {
 
                 <meta property="og:type" content="profile" />
                 <meta property="og:title" content="Thomas Mitchelmore" />
-                <meta property="og:url" content="https://tommitchelmore.com/profile" />
+                <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL + "/profile"} />
                 <meta property="og:image" content="/me.jpg" />
             </Head>
             <article>

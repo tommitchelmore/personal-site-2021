@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import WarningBanner from '../components/WarningBanner'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -7,7 +8,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin />
+          crossOrigin='true' />
 
         <link rel="preload"
           as="style"
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }) {
             href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" />
         </noscript>
       </Head>
+      <WarningBanner />
       <Component {...pageProps} />
     </>
   )

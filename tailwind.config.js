@@ -10,6 +10,12 @@ module.exports = {
       black: {
         DEFAULT: '#000000',
         muted: '#3F3F3F'
+      },
+      primary: {
+        DEFAULT: '#08081D'
+      },
+      warning: {
+        DEFAULT: '#EA2D2E'
       }
     },
     fontFamily: {
