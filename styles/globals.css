@@ -12,6 +12,14 @@ body {
   background-size: cover;
   background-position: center;
 }
+.bg-gradient-1-transparent::before {
+  content: '';
+  opacity: 0.4;
+  background-image: linear-gradient(to right, #0066FF 0%, #87FFC5 90%, #FFFFFF 100%);
+  background-size: cover;
+  background-position: center;
+  @apply rounded-xl top-0 left-0 absolute w-full h-full
+}
 .text-gradient-1 {
   background-image: linear-gradient(to right, #0066FF 0%, #87FFC5 90%, #FFFFFF 100%);
   background-clip: text;
@@ -26,10 +34,6 @@ body {
   @apply mr-4 text-2xl
 }
 
-.work-item {
-  overflow-x:visible;
-}
-
 .work-item > div:first-child > * {
   transition: all 0.3s;
 }
@@ -38,5 +42,40 @@ body {
   text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+.work-item > .work-thumbnail div {
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.work-item:hover > .work-thumbnail div {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.post-body h1 {
+  @apply text-4xl xl:text-5xl mb-4 mt-10
+}
+.post-body p {
+  @apply mb-4
+}
+.post-body table td {
+  @apply inline-block xl:table-cell
+}
+.post-body table td:first-child * {
+  @apply mr-10
+}
+.post-body table td:last-child {
+  @apply xl:w-1/2 2xl:w-2/5
+}
+.post-body table img {
+  @apply shadow-xl
+}
+
+/* LARGE */
+@media (min-width: 1024px) {
+  .work-item > .work-text {
+    width: 180%;
+  }
+}
 
 @tailwind utilities;

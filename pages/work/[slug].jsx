@@ -1,9 +1,7 @@
-import {GraphQLClient} from 'graphql-request'
 import Container from '../../components/Container'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import gql from '../../util/GraphQL'
-
 
 export default function WorkPage({previousWork}) {
     const router = useRouter()
@@ -28,7 +26,7 @@ export default function WorkPage({previousWork}) {
                 <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL + router.asPath} />
                 <meta property="og:image" content={previousWork.thumbnail.url} />
                 <meta property="article:published_time" content={previousWork.publishedAt} />
-                <meta property="article:author" content={process.env.base_url + "/profile"} />
+                <meta property="article:author" content={process.env.base_url + "/about"} />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content={process.env.NEXT_PUBLIC_BASE_URL + router.asPath} />
@@ -39,12 +37,11 @@ export default function WorkPage({previousWork}) {
             <article>
                 <div
                     id="header"
-                    className="h-64"
+                    className="h-64 lg:h-96"
                     style={{
                         backgroundImage: `url(${previousWork.thumbnail.url})`,
-                        backgroundPosition: 'top',
-                        backgroundSize: 'cover',
-                        paddingTop: '40%'
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover'
                     }}
                 >
                 </div>
@@ -53,7 +50,8 @@ export default function WorkPage({previousWork}) {
                     <ul className="text-black-muted text-xl 2xl:text-2xl 2xl:w-4/5 mb-10 flex items-center justify-center">
                         {previousWork.tags.map((t, i) => <li className="mx-2" key={i}>{t}</li>)}
                     </ul>
-                    <div className="" dangerouslySetInnerHTML={{__html: previousWork.body.html}} />
+                    <blockquote className="text-2xl mb-10">{previousWork.exerpt}</blockquote>
+                    <div className="post-body" dangerouslySetInnerHTML={{__html: previousWork.body.html}} />
                 </Container>
             </article>
         </>}

@@ -14,6 +14,9 @@ module.exports = {
       primary: {
         DEFAULT: '#08081D'
       },
+      secondary: {
+        DEFAULT: '#0066FF'
+      },
       warning: {
         DEFAULT: '#EA2D2E'
       }

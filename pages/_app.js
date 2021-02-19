@@ -1,8 +1,11 @@
 import Head from 'next/head'
+import { useEffect, useRef } from 'react'
+import Footer from '../components/Footer'
 import WarningBanner from '../components/WarningBanner'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
+
   return (
     <>
       <Head>
@@ -25,6 +28,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <WarningBanner />
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }
