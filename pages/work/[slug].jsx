@@ -37,20 +37,21 @@ export default function WorkPage({previousWork}) {
             <article>
                 <div
                     id="header"
-                    className="h-64 lg:h-96"
                     style={{
-                        backgroundImage: `url(${previousWork.thumbnail.url})`,
+                        backgroundImage: `linear-gradient(to bottom right, rgba(8,8,29,1), rgba(8,8,29,0.8)), url(${previousWork.thumbnail.url})`,
                         backgroundPosition: 'center',
                         backgroundSize: 'cover'
                     }}
                 >
+                    <Container>
+                        <h1 className="text-white text-6xl 2xl:text-8xl mb-5">{previousWork.title}</h1>
+                        <ul className="text-black-muted text-xl 2xl:text-2xl 2xl:w-4/5 mb-10 flex items-center justify-center">
+                            {previousWork.tags.map((t, i) => <li className="mx-2" key={i}>{t}</li>)}
+                        </ul>
+                        <blockquote className="text-2xl text-white mb-10">{previousWork.exerpt}</blockquote>
+                    </Container>
                 </div>
                 <Container>
-                    <h1 className="text-black text-6xl 2xl:text-8xl mb-5">{previousWork.title}</h1>
-                    <ul className="text-black-muted text-xl 2xl:text-2xl 2xl:w-4/5 mb-10 flex items-center justify-center">
-                        {previousWork.tags.map((t, i) => <li className="mx-2" key={i}>{t}</li>)}
-                    </ul>
-                    <blockquote className="text-2xl mb-10">{previousWork.exerpt}</blockquote>
                     <div className="post-body" dangerouslySetInnerHTML={{__html: previousWork.body.html}} />
                 </Container>
             </article>
