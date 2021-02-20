@@ -93,8 +93,14 @@ nav.navbar_top::before {
 .post-body table td:last-child {
   @apply xl:w-1/2 2xl:w-2/5
 }
-.post-body table img {
+.post-body img {
   @apply shadow-xl
+}
+.post-body > img {
+  @apply w-full lg:w-10/12 mx-auto
+}
+.post-body table > img {
+  @apply w-full
 }
 
 /* LARGE */
