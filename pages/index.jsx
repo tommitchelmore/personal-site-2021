@@ -32,7 +32,7 @@ export default function Home({previousWorks}) {
       </Head>
       <main>
         <Header />
-        <PreviousWorks previousWorks={previousWorks.slice(0,3)} />
+        <PreviousWorks withHeader previousWorks={previousWorks.slice(0,3)} />
         <Contact />
       </main>
     </>

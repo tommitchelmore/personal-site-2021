@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { useEffect, useRef } from 'react'
 import Footer from '../components/Footer'
 import WarningBanner from '../components/WarningBanner'
+import Navigation from '../components/Navigation'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -26,6 +26,7 @@ function MyApp({ Component, pageProps }) {
             href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" />
         </noscript>
       </Head>
+      <Navigation />
       <WarningBanner />
       <Component {...pageProps} />
       <Footer />
