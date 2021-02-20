@@ -10,7 +10,7 @@ function Work({ title, time, thumbnail, slug }) {
             >
                 <h2 className="text-5xl 2xl:text-7xl pb-4">{title}</h2>
                 <p className="text-xl 2xl:text-2xl text-black-muted">{time}</p>
-                <div className="text-xl 2xl:text-2xl text-black-muted flex items-center">Learn More <IoArrowForwardCircleOutline className="w-12 h-12" /></div>
+                <div className="text-xl 2xl:text-2xl text-black-muted flex items-center">Learn More <IoArrowForwardCircleOutline className="w-8 h-8" /></div>
             </div>
             <div className="work-thumbnail rounded-xl col-span-12 lg:col-span-8 relative"
                 style={{

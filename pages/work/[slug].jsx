@@ -2,6 +2,7 @@ import Container from '../../components/Container'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import gql from '../../util/GraphQL'
+import {FiExternalLink as Icon} from 'react-icons/fi'
 
 export default function WorkPage({previousWork}) {
     const router = useRouter()
@@ -44,11 +45,15 @@ export default function WorkPage({previousWork}) {
                     }}
                 >
                     <Container>
-                        <h1 className="text-white text-6xl 2xl:text-8xl mb-5">{previousWork.title}</h1>
-                        <ul className="text-black-muted text-xl 2xl:text-2xl 2xl:w-4/5 mb-10 flex items-center justify-center">
-                            {previousWork.tags.map((t, i) => <li className="mx-2" key={i}>{t}</li>)}
+                        <h1 className="text-white text-6xl 2xl:text-8xl mb-10">{previousWork.title}</h1>
+                        <ul className="text-white 2xl:text-md 2xl:w-4/5 mb-10 flex items-center justify-center">
+                            {previousWork.tags.map((t, i) => <li className="mx-2 px-3 py-1 rounded-full bg-secondary" key={i}>{t}</li>)}
                         </ul>
                         <blockquote className="text-2xl text-white mb-10">{previousWork.exerpt}</blockquote>
+                        <div className="flex">
+                            {previousWork.demo && <HeaderLink href={previousWork.demo} rel="noopener" target="_blank">Live Version</HeaderLink>}
+                            {previousWork.sourceCode && <HeaderLink href={previousWork.sourceCode} rel="noopener" target="_blank">Source Code</HeaderLink>}
+                        </div>
                     </Container>
                 </div>
                 <Container>
@@ -59,6 +64,10 @@ export default function WorkPage({previousWork}) {
         <noscript>Error</noscript>
         </>
     )
+}
+
+function HeaderLink(props) {
+    return <a className="mx-2 rounded-xl underline text-white text-xl flex items-center" {...props}>{props.children} <Icon className="w-6 h-6 ml-2" /></a>
 }
 
 export async function getStaticProps({ params }) {
@@ -77,6 +86,8 @@ export async function getStaticProps({ params }) {
                         html
                     }
                     publishedAt
+                    demo
+                    sourceCode
                 }
             }
         `,
