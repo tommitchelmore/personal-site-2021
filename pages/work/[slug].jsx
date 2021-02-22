@@ -44,7 +44,7 @@ export default function WorkPage({previousWork}) {
                         backgroundSize: 'cover'
                     }}
                 >
-                    <Container>
+                    <Container className="text-center">
                         <h1 className="text-white text-6xl 2xl:text-8xl mb-10">{previousWork.title}</h1>
                         <ul className="text-white 2xl:text-md 2xl:w-4/5 mb-10 flex items-center justify-center">
                             {previousWork.tags.map((t, i) => <li className="mx-2 px-3 py-1 rounded-full bg-secondary" key={i}>{t}</li>)}

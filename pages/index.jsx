@@ -32,7 +32,7 @@ export default function Home({previousWorks}) {
       </Head>
       <main>
         <Header />
-        <PreviousWorks withHeader previousWorks={previousWorks.slice(0,3)} />
+        <PreviousWorks onHomePage previousWorks={previousWorks.filter(({featured}) => featured === true)} />
         <Contact />
       </main>
     </>
@@ -45,6 +45,7 @@ export async function getStaticProps() {
       `{
           previousWorks {
               title
+              featured
               thumbnail {
                   url
               }

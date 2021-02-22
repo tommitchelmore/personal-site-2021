@@ -33,6 +33,11 @@ nav.navbar_top::before {
   opacity: 0
 }
 
+.mobile-nav-page > div > div {
+  transition: height 0.3s;
+  @apply bg-primary
+}
+
 .bg-gradient-1 {
   background-image: url('/bg.svg');
   background-size: cover;
@@ -46,10 +51,20 @@ nav.navbar_top::before {
   background-position: center;
   @apply rounded-xl top-0 left-0 absolute w-full h-full
 }
+
+.bg-gradient-2 {
+  background: linear-gradient(to right, rgba(0, 102, 255, 0.9), rgba(0, 102, 255, 0.8), rgba(0, 102, 255, 1));
+}
+
 .text-gradient-1 {
   background-image: linear-gradient(to right, #0066FF 0%, #87FFC5 90%, #FFFFFF 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.btn-secondary {
+  transition: all 0.3s;
+  @apply px-6 py-3 bg-secondary text-white text-xl rounded-md shadow-lg hover:shadow-xl
 }
 
 .social-links > li {
@@ -97,7 +112,7 @@ nav.navbar_top::before {
   @apply shadow-xl
 }
 .post-body > img {
-  @apply w-full lg:w-10/12 mx-auto
+  @apply w-full lg:w-10/12 mx-auto my-10
 }
 .post-body table > img {
   @apply w-full
@@ -108,6 +123,12 @@ nav.navbar_top::before {
   .work-item > .work-text {
     width: 180%;
   }
+}
+
+@keyframes gradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 @tailwind utilities;

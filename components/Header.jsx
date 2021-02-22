@@ -3,7 +3,7 @@ import Container from './Container';
 
 function Header() {
     return (
-        <section id="home" className="bg-gradient-1">
+        <section id="home" className="bg-gradient-1 pt-10">
             <Container className="text-center" style={{minHeight: '90vh'}}>
                 <h1 className="text-white text-6xl 2xl:text-8xl">Thomas Mitchelmore</h1>
                 <h2 className="text-white text-6xl 2xl:text-8xl mb-10">Student & <span className="text-gradient-1">Developer</span></h2>

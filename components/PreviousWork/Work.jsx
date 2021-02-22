@@ -24,10 +24,10 @@ function Work({ title, time, thumbnail, slug }) {
                     <a>
                         <div className="
                             absolute top-0 left-0 w-full h-full
-                            rounded-xl opacity-0 pointer-events-none bg-secondary
+                            rounded-xl opacity-0 pointer-events-none bg-gradient-2
                             flex flex-col items-center justify-center
                         ">
-                            <h1 className="z-10 text-white">Learn More</h1>
+                            <h1 className="z-10 text-white text-4xl flex items-center">Learn More<IoArrowForwardCircleOutline /></h1>
                         </div>
                     </a>
                 </Link>

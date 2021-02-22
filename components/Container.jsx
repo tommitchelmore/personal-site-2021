@@ -5,7 +5,7 @@ function Container({children, className, noVertical, wide, style}) {
         <div 
             className={`
                 ${wide ? 'w-5/6 lg:w-3/4' : 'w-5/6 lg:w-2/3'}
-                ${!noVertical ? 'py-32' : ''} ${className}
+                ${!noVertical ? 'py-24 xl:py-28' : ''} ${className}
                 mx-auto flex flex-col justify-center items-center
             `}
             style={style}

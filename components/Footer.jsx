@@ -1,16 +1,12 @@
 import React from 'react';
 import Container from './Container';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { AiFillGithub } from 'react-icons/ai'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 
 function Footer() {
-
-    const router = useRouter();
-
-    return (router.asPath !== "/" &&
+    return (
         <footer className="bg-black">
             <Container noVertical wide>
                 <div className="py-10 px-20 grid grid-cols-1 lg:grid-cols-3 gap-20 w-full mt-5">

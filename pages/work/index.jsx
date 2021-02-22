@@ -30,7 +30,7 @@ export default function Home({ previousWorks }) {
                 <meta property="twitter:image" content="https://i.imgur.com/Q0y2DNl.png" />
             </Head>
             <main>
-                <div id="header" className="bg-gradient-1">
+                <div id="header" className="bg-gradient-1 pt-10">
                     <Container>
                         <h1 className="text-white text-6xl 2xl:text-8xl mb-10">Previous <span className="text-gradient-1">Work</span></h1>
                     </Container>
