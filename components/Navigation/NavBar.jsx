@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 function NavBar() {
@@ -50,7 +51,8 @@ function NavBar() {
 }
 
 function NavLink({to, children}) {
-    return <Link href={to}><a className="px-4 py-2 mx-2 text-xl text-white-muted hover:text-white">{children}</a></Link>
+    const router = useRouter()
+    return <Link href={to}><a className={`${router.asPath === to ? 'text-white' : 'text-white-muted'} px-4 py-2 mx-2 text-xl hover:text-white`}>{children}</a></Link>
 }
 
 export default NavBar;

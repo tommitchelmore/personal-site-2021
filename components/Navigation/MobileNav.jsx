@@ -28,7 +28,7 @@ function MobileNav(props) {
             </div>
         </div>
         <div 
-            className="mobile-nav-page fixed w-screen h-screen"
+            className="mobile-nav-page lg:hidden fixed w-screen h-screen"
             style={{zIndex: 999}}
         >
             {Array(6).fill().map((n, i) => (
