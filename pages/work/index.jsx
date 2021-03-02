@@ -45,7 +45,7 @@ export async function getStaticProps() {
 
     const { previousWorks } = await gql.request(
         `{
-          previousWorks {
+          previousWorks(orderBy: createdAt_DESC) {
               title
               thumbnail {
                   url

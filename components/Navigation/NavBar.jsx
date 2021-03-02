@@ -52,7 +52,7 @@ function NavBar() {
 
 function NavLink({to, children}) {
     const router = useRouter()
-    return <Link href={to}><a className={`${router.asPath === to ? 'text-white' : 'text-white-muted'} px-4 py-2 mx-2 text-xl hover:text-white`}>{children}</a></Link>
+    return <li><Link href={to}><a className={`${router.asPath === to ? 'text-white' : 'text-white-muted'} px-4 py-2 mx-2 text-xl hover:text-white`}>{children}</a></Link></li>
 }
 
 export default NavBar;
