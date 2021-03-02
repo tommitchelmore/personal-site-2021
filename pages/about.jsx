@@ -27,6 +27,9 @@ export default function WorkPage() {
                             <p>
                                 I'm Tom, a student of Computer Science at the <a href="https://southampton.ac.uk">University of Southampton</a> in the UK.  Outside of my education, I enjoy all things Web Development and Systems Administration, with a strong interest in Cyber Security - I also enjoy volunteering and spending quality time with my good friends.
                             </p>
+                            <p>
+                                I
+                            </p>
                             {/*<Image src="/me.jpg" className="rounded-full" width={200} height={200} ></Image>*/}
                         </div>
                         <h1>Education & Background</h1>
