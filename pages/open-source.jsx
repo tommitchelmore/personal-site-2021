@@ -12,8 +12,8 @@ function OpenSource() {
         fetch("https://api.github.com/users/tommitchelmore/repos?sort=updated")
             .then (res => res.json())
             .then(data => {
-                //setTimeout(() => setRepos({data}), 1000)
-                setRepos({data})
+                setTimeout(() => setRepos({data}), 1000)
+                //setRepos({data})
             })
     }, [])
 
@@ -57,10 +57,8 @@ function OpenSource() {
                     ))}
                 </Container> 
                 : 
-                <Container className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-                    {Array(10).fill().map((repo, i) => (
-                        <RepoCard skeleton key={i} />
-                    ))}
+                <Container className="flex justify-center animate-spin text-4xl text-primary mb-96">
+                    <Spinner />
                 </Container>
                 }
             </div>

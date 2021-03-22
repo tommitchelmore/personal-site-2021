@@ -2,6 +2,7 @@ import Head from 'next/head'
 import PreviousWorks from '../../components/PreviousWork'
 import Container from '../../components/Container'
 import gql from '../../util/GraphQL'
+import Link from 'next/link'
 
 export default function Home({ previousWorks }) {
     return (
@@ -33,7 +34,7 @@ export default function Home({ previousWorks }) {
                 <div id="header" className="bg-gradient-1 pt-10">
                     <Container>
                         <h1 className="text-white text-6xl 2xl:text-8xl mb-10">Previous <span className="text-gradient-1">Work</span></h1>
-                        <p className="text-white-muted text-xl 2xl:text-2xl 2xl:w-4/5 text-center">All of my previous projects can be found here</p>
+                        <p className="text-white-muted text-xl 2xl:text-2xl 2xl:w-4/5 text-center">You can find my open source projects <Link href="/open-source"><a className="text-white underline">here</a></Link></p>
                     </Container>
                 </div>
                 <PreviousWorks previousWorks={previousWorks} />

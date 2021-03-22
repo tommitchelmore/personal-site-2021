@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Footer from '../components/Footer'
-import WarningBanner from '../components/WarningBanner'
 import Navigation from '../components/Navigation'
 import '../styles/globals.css'
 
@@ -27,7 +26,6 @@ function MyApp({ Component, pageProps }) {
         </noscript>
       </Head>
       <Navigation />
-      <WarningBanner />
       <Component {...pageProps} />
       <Footer />
     </>
