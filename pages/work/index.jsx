@@ -33,6 +33,7 @@ export default function Home({ previousWorks }) {
                 <div id="header" className="bg-gradient-1 pt-10">
                     <Container>
                         <h1 className="text-white text-6xl 2xl:text-8xl mb-10">Previous <span className="text-gradient-1">Work</span></h1>
+                        <p className="text-white-muted text-xl 2xl:text-2xl 2xl:w-4/5 text-center">All of my previous projects can be found here</p>
                     </Container>
                 </div>
                 <PreviousWorks previousWorks={previousWorks} />

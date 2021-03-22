@@ -32,7 +32,7 @@ export default function Home({previousWorks}) {
       </Head>
       <main>
         <Header />
-        <PreviousWorks onHomePage previousWorks={previousWorks.filter(({featured}) => featured === true)} />
+        <PreviousWorks onHomePage previousWorks={previousWorks.filter(({ featured }) => featured === true)} />
         <Contact />
       </main>
     </>
@@ -43,25 +43,25 @@ export async function getStaticProps() {
 
   const { previousWorks } = await gql.request(
       `{
-          previousWorks(orderBy: createdAt_DESC) {
-              title
-              featured
-              thumbnail {
-                  url
-              }
-              tags
-              time
-              slug
-              body {
-                  html
-              }
+        previousWorks(orderBy: createdAt_DESC) {
+          title
+          featured
+          thumbnail {
+              url
           }
+          tags
+          time
+          slug
+          body {
+              html
+          }
+        }
       }`
   )
 
   return {
       props: {
-          previousWorks,
+        previousWorks,
       },
   }
 }
