@@ -30,7 +30,7 @@ function MobileNav(props) {
                 {navState ? <CloseIcon /> : <MenuIcon />}
             </div>
         </div>
-        <div className={`${navState ? 'fixed' : 'hidden pointer-events-none'} flex flex-col justify-around items-center w-screen h-screen`} onClick={toggleNav} style={{zIndex: 999, animation: 'opacityIn 1s'}}>
+        <div className={`${navState ? 'fixed' : 'hidden pointer-events-none'} lg:hidden flex flex-col justify-around items-center w-screen h-screen`} style={{zIndex: 999, animation: 'opacityIn 1s'}}>
             <div className="flex flex-col items-center">
                 <div className='mb-8'>
                     <Image width="128" height="128" src="/logo.png" alt="Logo" />
@@ -39,10 +39,10 @@ function MobileNav(props) {
                 <p className="text-white-muted text-xl mb-8">Student & Fullstack Developer</p>
                 <div className="flex flex-col items-center">
                     <ul className="list-none flex flex-col items-center">
-                        <NavLink to="/">Home</NavLink>
-                        <NavLink to="/about">About</NavLink>
-                        <NavLink to="/work">Work</NavLink>
-                        <NavLink to="/#contact">Contact</NavLink>
+                        <NavLink to="/#home" onClick={toggleNav}>Home</NavLink>
+                        <NavLink to="/about" onClick={toggleNav}>About</NavLink>
+                        <NavLink to="/work" onClick={toggleNav}>Work</NavLink>
+                        <NavLink to="/#contact" onClick={toggleNav}>Contact</NavLink>
                     </ul>
                 </div>
             </div>
@@ -72,9 +72,9 @@ function MobileNav(props) {
     );
 }
 
-function NavLink({to, children}) {
+function NavLink({to, children, onClick}) {
     const router = useRouter()
-    return <li className="mb-2"><Link href={to}><a className={`${router.asPath === to ? 'text-white' : 'text-white-muted'} px-4 py-2 mx-2 text-2xl hover:text-white`}>{children}</a></Link></li>
+    return <li className="mb-2"><Link href={to}><a onClick={onClick} className={`${router.asPath === to ? 'text-white' : 'text-white-muted'} px-4 py-2 mx-2 text-2xl hover:text-white`}>{children}</a></Link></li>
 }
 
 export default MobileNav;

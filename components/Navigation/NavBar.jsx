@@ -40,7 +40,7 @@ function NavBar() {
             <div className="w-5/6 lg:w-2/3 mx-auto py-6 flex items-center h-full">
                 <div className="logo text-white text-4xl">TM</div>
                 <ul className="ml-auto flex">
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/#home">Home</NavLink>
                     <NavLink to="/about">About</NavLink>
                     <NavLink to="/work">Work</NavLink>
                     <NavLink to="/#contact">Contact</NavLink>

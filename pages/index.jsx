@@ -30,7 +30,7 @@ export default function Home({previousWorks}) {
         <meta property="twitter:description" content="Hi! 👋 I’m a passionate full stack developer from the UK, currently completing my Bachelors degree in Computer Science at the University of Southampton." />
         <meta property="twitter:image" content="https://i.imgur.com/Q0y2DNl.png" />
       </Head>
-      <main>
+      <main id="home">
         <Header />
         <PreviousWorks onHomePage previousWorks={previousWorks.filter(({ featured }) => featured === true)} />
         <Contact />
