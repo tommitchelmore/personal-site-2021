@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FiMenu as MenuIcon, FiX as CloseIcon, FiGithub as Github, FiGitlab as Gitlab, FiLinkedin as Linkedin } from 'react-icons/fi';
+import { FiMenu as MenuIcon, FiX as CloseIcon } from 'react-icons/fi';
+import { FaLinkedinIn as Linkedin } from 'react-icons/fa'  
+import { AiFillGithub as Github } from 'react-icons/ai'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -51,10 +53,9 @@ function MobileNav(props) {
                     <a className="text-white-muted hover:text-white" href="mailto:tommitchelmore@outlook.com">tommitchelmore@outlook.com</a>
                     <a className="text-white-muted hover:text-white" href="mailto:tm7g20@southampton.ac.uk">tm7g20@southampton.ac.uk</a>
                 </div>
-                <div className="grid grid-cols-3 gap-8 text-2xl">
-                    <a href="https://github.com/tommitchelmore" target="_blank" rel="noopener"><Github className="text-white-muted hover:text-white" /></a>
-                    <a href="https://gitlab.com/tommitchelmore" target="_blank" rel="noopener"><Gitlab className="text-white-muted hover:text-white" /></a>
+                <div className="grid grid-cols-2 gap-8 text-2xl">
                     <a href="https://www.linkedin.com/in/tommitchelmore/" target="_blank" rel="noopener"><Linkedin className="text-white-muted hover:text-white" /></a>
+                    <a href="https://github.com/tommitchelmore" target="_blank" rel="noopener"><Github className="text-white-muted hover:text-white" /></a>
                 </div>
             </div>
         </div>
