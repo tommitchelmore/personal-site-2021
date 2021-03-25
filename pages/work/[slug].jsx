@@ -57,7 +57,7 @@ export default function WorkPage({previousWork}) {
                     </Container>
                 </div>
                 <Container>
-                    <div className="post-body" dangerouslySetInnerHTML={{__html: previousWork.body.html}} />
+                    <div className="prose" dangerouslySetInnerHTML={{__html: previousWork.body.html}} />
                 </Container>
             </article>
         </>}

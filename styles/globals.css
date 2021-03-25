@@ -92,6 +92,7 @@ nav.navbar_top::before {
   opacity: 1;
   pointer-events: all;
 }
+/*
 .post-body {
   @apply w-full
 }
@@ -122,6 +123,7 @@ nav.navbar_top::before {
 .post-body table > img {
   @apply w-full
 }
+*/
 
 /* LARGE */
 @media (min-width: 1024px) {

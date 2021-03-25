@@ -5,6 +5,7 @@ import Link from 'next/link'
 function NavBar() {
 
     const el = useRef(null)
+    const router = useRouter()
 
     useEffect(() => {
         let delta = 0
@@ -33,6 +34,11 @@ function NavBar() {
             delta = pos <= 0 ? 0 : pos
 
         }, false)
+
+        router.events.on('routeChangeComplete', () => {
+            el.current.style.top = "0px"
+            console.log("fired")
+        })
     }, [])
 
     return (
