@@ -92,38 +92,10 @@ nav.navbar_top::before {
   opacity: 1;
   pointer-events: all;
 }
-/*
-.post-body {
-  @apply w-full
-}
-.post-body h1 {
-  @apply text-4xl xl:text-5xl mb-4 mt-10
-}
-.post-body p {
-  @apply mb-4
-}
-.post-body a {
-  @apply underline text-secondary
-}
-.post-body table td {
-  @apply inline-block xl:table-cell
-}
-.post-body table td:first-child * {
-  @apply mr-10
-}
-.post-body table td:last-child {
-  @apply xl:w-1/2 2xl:w-2/5
-}
-.post-body img {
+
+.prose img {
   @apply shadow-xl
 }
-.post-body > img {
-  @apply w-full lg:w-10/12 mx-auto my-10
-}
-.post-body table > img {
-  @apply w-full
-}
-*/
 
 /* LARGE */
 @media (min-width: 1024px) {
