@@ -37,8 +37,8 @@ function MobileNav(props) {
                 <div className='mb-8'>
                     <Image width="128" height="128" src="/logo.png" alt="Logo" />
                 </div>
-                <h1 className="text-white text-4xl">Thomas Mitchelmore</h1>
-                <p className="text-white-muted text-xl mb-8">Student & Fullstack Developer</p>
+                <h1 className="text-white text-4xl text-center">Thomas Mitchelmore</h1>
+                <p className="text-white-muted text-xl mb-8 text-center">Student & Fullstack Developer</p>
                 <div className="flex flex-col items-center">
                     <ul className="list-none flex flex-col items-center">
                         <NavLink to="/#home" onClick={toggleNav}>Home</NavLink>
