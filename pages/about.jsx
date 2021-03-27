@@ -21,7 +21,7 @@ export default function WorkPage() {
                     </Container>
                 </div>
                 <Container>
-                    <div className="post-body">
+                    <div className="prose">
                         <h1>Hey there 👋</h1>
                         <div className="flex">
                             <p>
