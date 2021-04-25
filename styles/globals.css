@@ -100,7 +100,7 @@ nav.navbar_top::before {
 /* LARGE */
 @media (min-width: 1024px) {
   .work-item > .work-text {
-    width: 180%;
+    width: 100%;
   }
 }
 
